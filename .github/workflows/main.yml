@@ -16,6 +16,5 @@ jobs:
         with:
         python-version: '3.x'
         architecture: 'x64'
-      - run: |
-      pip3 install pylint
-      python agecal.py
+      - run: pip install pylint
+      - run: python agecal.py
