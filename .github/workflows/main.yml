@@ -18,3 +18,13 @@ jobs:
         architecture: 'x64'
     - run: pip install pylint
     - run: python agecal.py
+  
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'          
+        architecture: 'x64'
+    - run: python agecal.py
