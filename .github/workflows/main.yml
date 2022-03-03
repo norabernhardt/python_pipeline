@@ -1,0 +1,21 @@
+name: deploy script
+
+on:
+
+  push:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: action/setup-python@v2
+        with:
+        python-version: '3.x'
+        architecture: 'x64'
+      - run: |
+      pip3 install pylint
+      python agecal.py
